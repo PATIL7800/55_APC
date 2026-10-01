@@ -1,0 +1,10 @@
+import numpy as np
+arr1=np.array([2,12,16,25,81])
+arr2=np.array([1,4,5,6,9])
+print("Array A:",arr1)
+print("Array B:",arr1)
+print("Addition:",arr1+arr2)
+print("subtraction:",arr1-arr2)
+print("multiplication:",arr1*arr2)
+print("division:",arr1/arr2)
+print("Module:",arr1%arr2)
