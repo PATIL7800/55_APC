@@ -92,7 +92,7 @@ def update_talukas(event=None):
     taluka.set("")
 
 
-# Registration validation
+
 def register():
     name = entry_name.get().strip()
     email = entry_email.get().strip()
@@ -106,7 +106,7 @@ def register():
     selected_district = district.get()
     selected_taluka = taluka.get()
 
-    # Required field validation
+   
     required_fields = [
         (name, "Full Name", entry_name),
         (email, "Email", entry_email),
@@ -129,7 +129,6 @@ def register():
             widget.focus_set()
             return
 
-    # Full name validation
     if len(name) < 3:
         messagebox.showerror(
             "Validation Error",
@@ -146,7 +145,7 @@ def register():
         entry_name.focus_set()
         return
 
-    # Email validation
+    
     email_pattern = r"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$"
 
     if not re.fullmatch(email_pattern, email):
