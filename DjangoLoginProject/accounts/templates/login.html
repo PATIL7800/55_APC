@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <link rel="stylesheet" href="{% static 'accounts/style.css' %}">
+</head>
+<body>
+    <main class="login-card">
+        <div class="brand-mark">DL</div>
+        <h1>User Login</h1>
+        <p class="subtitle">Welcome back! Please log in to continue.</p>
+
+        {% if error %}
+            <p class="error" role="alert">{{ error }}</p>
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username"
+                   placeholder="Enter your username" autocomplete="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password"
+                   placeholder="Enter your password" autocomplete="current-password" required>
+
+            <button type="submit">Login</button>
+        </form>
+        <p class="helper">Use an account created with <code>createsuperuser</code>.</p>
+    </main>
+</body>
+</html>
